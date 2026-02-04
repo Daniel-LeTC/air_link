@@ -52,7 +52,35 @@ cargo run -- list-cameras
 ```
 
 ## Configuration Parameters
+
 - `--camera-id`: Index of the video device.
+
 - `--sensitivity`: Multiplier for mouse movement speed.
-- `--screen-width/height`: Resolution of the target display.
-- `--screen-x/y-offset`: Origin coordinates for multi-monitor setups.
+
+- `--screen-width/height`: Resolution of the target display area.
+
+- `--screen-x/y-offset`: Origin coordinates for the target display.
+
+
+
+## Multi-Monitor Setup
+
+In multi-monitor environments, the application maps normalized AI coordinates (0.0 to 1.0) to a specific screen region defined by dimensions and offsets.
+
+
+
+### Finding your offsets (Linux/Hyprland)
+
+Run `hyprctl monitors` to identify the geometry of your displays. For example, if your secondary monitor is 1920x1080 and positioned to the right of your primary 1080p screen, its coordinates will be `1920x1080@1920,0`.
+
+
+
+### Example: Target the second monitor
+
+```bash
+
+cargo run -- run --screen-width 1920 --screen-height 1080 --screen-x-offset 1920
+
+```
+
+This command ensures the "Air Mouse" only operates within the bounds of the second screen.
