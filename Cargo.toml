@@ -1,0 +1,40 @@
+[package]
+name = "air-link"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# CLI & Args
+clap = { version = "4.5", features = ["derive", "env"] }
+
+# Error Handling
+thiserror = "2.0"
+anyhow = "1.0"
+
+# Logging & Tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Async
+tokio = { version = "1.0", features = ["full"] }
+
+# --- CORE AIR-LINK DEPS ---
+# Camera
+nokhwa = { version = "0.10", features = ["input-native", "input-v4l"] }
+
+# Image Processing
+image = "0.25"
+
+# AI Inference (ONNX)
+ort = { version = "2.0.0-rc.11", features = ["copy-dylibs", "ndarray"] }
+
+# Mouse Control
+uinput = "0.1"
+
+# Math
+ndarray = "0.16"
+
+# --- GUI ---
+eframe = "0.29"
+egui_extras = { version = "0.29", features = ["image"] }
+
