@@ -17,8 +17,14 @@ The project has completed the following implementation phases:
 - **Modular Project Skeleton**: Established a clean module tree for error handling, CLI, core logic, and GUI.
 - **AI Inference Pipeline**: Integrated ONNX Runtime for CPU-based hand tracking optimized for legacy AVX instructions.
 - **Hardware Integration**: Implemented camera stream capture and multi-monitor coordinate mapping.
-- **Gesture System**: Integrated a pinch-to-click gesture mechanism using Euclidean distance analysis.
-- **Graphical Interface**: Developed a Wayland-compatible GUI for live monitoring and status reporting.
+- **Gesture System**: Integrated a pinch-to-click gesture mechanism (current implementation is undergoing tuning).
+- **Graphical Interface**: Developed a Wayland-compatible GUI for live monitoring.
+
+### Known Limitations (Work in Progress)
+- **GUI Functionality**: The graphical interface currently only displays the raw video stream. It does not yet visualize AI landmarks or bounding boxes.
+- **Gesture Reliability**: The pinch-to-click gesture is not yet fully operational and requires further sensitivity tuning.
+- **Motion Tuning**: Mouse movement sensitivity and the "Active Zone" mapping require additional calibration for different hardware environments.
+- **Headless Optimization**: While CLI mode is functional, performance tuning for legacy CPUs (i7 Gen 3) is ongoing.
 
 ## Dependencies
 
